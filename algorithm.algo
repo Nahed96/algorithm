@@ -1,0 +1,21 @@
+ALGORITHM checkpoint
+VAR
+    tab1,tab2,tab : ARRAY_OF type[10];
+    var i,j,l,t,sum :INTEGER ;
+BEGIN
+l:=0;
+sum:=0;
+    FOR i FROM 0 TO tab1.length-1 STEP step  DO
+        FOR j FROM 0 TO tab2.length-1 STEP step  DO
+            IF (tab1[i]<>tab2[j]) THEN
+                tab[l]:=tab1[i];
+                l++;
+            END_IF
+        END_FOR
+    END_FOR
+    FOR t FROM 0 TO tab.length-1 STEP step  DO
+        sum:=sum+tab[t];
+    END_FOR
+    write("la somme est :");
+    write(sum);
+END

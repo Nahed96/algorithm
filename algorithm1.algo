@@ -1,0 +1,27 @@
+ALGORITHM 
+VAR
+    htab : HASH_TABLE<INTEGER,INTEGER>;
+    tab1 , tab2:ARRAY_OF type[10];
+    sum,i,j,t:INTEGER;
+BEGIN
+    FOR i FROM 0 TO tab1.length-1 STEP step  DO
+        htab.insert(tab1[i],1);
+    END_FOR
+    FOR j FROM 0 TO tab2.length-1 STEP step  DO
+        IF (htab.lookup(tab2[j])=TRUE) THEN
+            count:=htab.get(tab2[j]);
+            htab.insert(tab2[j],count+1);
+        ELSE
+            htab.insert(tab2[j],1);
+        END_IF
+    END_FOR
+    keys :=htab.keySet();
+    values:=htab.values();
+    sum=0;
+    FOR t FROM 0 TO htab.length-1 STEP step  DO
+        IF (values[t]=1) THEN
+           sum:=sum+keys[t];
+        END_IF
+    write("la somme est :");
+    write(sum);
+END
