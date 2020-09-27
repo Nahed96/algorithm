@@ -1,0 +1,24 @@
+ALGORITHM algorithm2
+VAR
+   ps : INTEGER ;
+   v1 , v2  : ARRAY_OF INTEGER [3];
+BEGIN
+
+PROCEDURE dot_product(v1 ,v1:ARRAY_OF INTEGER[3] , var ps:INTEGER)
+VAR
+   i:INTEGER;
+        
+BEGIN
+ps:=0;
+    FOR i FROM 0 TO 2 STEP 1  DO
+        ps=ps+v1[i]*v2[i];
+    END_FOR
+END
+ps:=0;
+dot_product(v1,v2,ps);
+IF (ps=0) THEN
+    write ("les 2 vecteurs sont othogonaux");
+ELSE
+    write("les 2 vecteurs ne sont pas orthogonaux");
+END_IF
+END
